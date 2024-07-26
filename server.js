@@ -7,7 +7,9 @@ const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
     origin: process.env.CLIENT_URL || 'http://localhost:3000' || 'https://frontendja.netlify.app',
-    methods: ["GET", "POST"]
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: 'Content-Type',
+    credentials: true
   }
 });
 
