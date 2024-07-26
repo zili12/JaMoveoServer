@@ -4,11 +4,12 @@ const socketIo = require('socket.io');
 const setupSocket = require('./utils/socket');
 
 const server = http.createServer(app);
+
 const io = socketIo(server, {
   cors: {
-    origin: process.env.CLIENT_URL || 'http://localhost:3000' || 'https://frontendja.netlify.app',
+    origin: ['http://localhost:3000', 'https://frontendja.netlify.app'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: 'Content-Type',
+    allowedHeaders: ['Content-Type'],
     credentials: true
   }
 });

@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require('path');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
@@ -10,11 +9,12 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000' || 'https://frontendja.netlify.app',
+  origin: ['http://localhost:3000', 'https://frontendja.netlify.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: 'Content-Type',
+  allowedHeaders: ['Content-Type'],
   credentials: true
 }));
+
 app.use(express.json());
 
 // Connect to MongoDB
