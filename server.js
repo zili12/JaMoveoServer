@@ -6,7 +6,7 @@ const setupSocket = require('./utils/socket');
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: process.env.CLIENT_URL || 'http://localhost:3000',
+    origin: process.env.CLIENT_URL || 'http://localhost:3000' || 'https://frontendja.netlify.app',
     methods: ["GET", "POST"]
   }
 });
